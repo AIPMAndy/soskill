@@ -53,8 +53,28 @@ For higher API rate limits:
 
 ```bash
 export GITHUB_TOKEN=<your_token>
-make refresh
+python3 scripts/fetch_skills.py
 ```
+
+Optional reliability flags (recommended):
+
+```bash
+python3 scripts/fetch_skills.py \
+  --config config/sources.json \
+  --output data/skills.json \
+  --csv data/skills.csv \
+  --markdown docs/latest.md \
+  --min-total 1 \
+  --max-retries 2 \
+  --retry-delay 1.0 \
+  --timeout 30
+```
+
+Notes:
+- `--max-retries`: retries for transient 403/429/5xx and network errors
+- `--retry-delay`: exponential backoff base delay in seconds
+- `--timeout`: per-request timeout in seconds
+- `--min-total`: prevents overwriting outputs when fetched total is unexpectedly low
 
 ## 🧩 Install as a Codex Skill
 
