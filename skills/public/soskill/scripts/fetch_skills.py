@@ -9,11 +9,13 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
@@ -29,8 +31,62 @@ def utc_now() -> str:
 
 
 class GitHubClient:
-    def __init__(self, token: str = "") -> None:
+    def __init__(
+        self,
+        token: str = "",
+        *,
+        timeout: float = 30.0,
+        max_retries: int = 2,
+        retry_delay: float = 1.0,
+    ) -> None:
         self.token = token
+        self.timeout = max(1.0, float(timeout))
+        self.max_retries = max(0, int(max_retries))
+        self.retry_delay = max(0.0, float(retry_delay))
+
+    @staticmethod
+    def _retry_after_seconds(headers: Any) -> Optional[float]:
+        if not headers:
+            return None
+
+        retry_after = str(headers.get("Retry-After", "")).strip()
+        if not retry_after:
+            return None
+
+        if retry_after.isdigit():
+            return max(0.0, float(retry_after))
+
+        try:
+            retry_at = parsedate_to_datetime(retry_after).timestamp()
+            return max(0.0, retry_at - time.time())
+        except Exception:
+            return None
+
+    @staticmethod
+    def _rate_limit_reset_seconds(headers: Any) -> Optional[float]:
+        if not headers:
+            return None
+
+        reset = str(headers.get("X-RateLimit-Reset", "")).strip()
+        remaining = str(headers.get("X-RateLimit-Remaining", "")).strip()
+        if not reset or (remaining and remaining != "0"):
+            return None
+
+        try:
+            reset_at = float(reset)
+            return max(0.0, reset_at - time.time())
+        except ValueError:
+            return None
+
+    def _retry_wait(self, attempt: int, headers: Any) -> float:
+        wait = self.retry_delay * (2**attempt)
+        retry_after = self._retry_after_seconds(headers)
+        if retry_after is not None:
+            wait = max(wait, retry_after)
+        rate_limit_wait = self._rate_limit_reset_seconds(headers)
+        if rate_limit_wait is not None:
+            wait = max(wait, rate_limit_wait)
+        return min(wait, 120.0)
 
     def _request(self, url: str, accept: str) -> bytes:
         headers = {
@@ -41,14 +97,35 @@ class GitHubClient:
             headers["Authorization"] = f"Bearer {self.token}"
 
         req = urllib.request.Request(url=url, headers=headers)
-        try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                return resp.read()
-        except urllib.error.HTTPError as exc:
-            body = exc.read().decode("utf-8", errors="replace")
-            raise RuntimeError(f"HTTP {exc.code} for {url}: {body[:200]}") from exc
-        except urllib.error.URLError as exc:
-            raise RuntimeError(f"Network error for {url}: {exc}") from exc
+        for attempt in range(self.max_retries + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                    return resp.read()
+            except urllib.error.HTTPError as exc:
+                body = exc.read().decode("utf-8", errors="replace")
+                status = int(exc.code)
+                retriable = status in {403, 429, 500, 502, 503, 504}
+                if retriable and attempt < self.max_retries:
+                    wait = self._retry_wait(attempt, exc.headers)
+                    print(
+                        f"[retry] HTTP {status} for {url}; attempt {attempt + 1}/{self.max_retries}, wait={wait:.1f}s",
+                        file=sys.stderr,
+                    )
+                    if wait > 0:
+                        time.sleep(wait)
+                    continue
+                raise RuntimeError(f"HTTP {status} for {url}: {body[:200]}") from exc
+            except urllib.error.URLError as exc:
+                if attempt < self.max_retries:
+                    wait = self._retry_wait(attempt, None)
+                    print(
+                        f"[retry] network error for {url}; attempt {attempt + 1}/{self.max_retries}, wait={wait:.1f}s",
+                        file=sys.stderr,
+                    )
+                    if wait > 0:
+                        time.sleep(wait)
+                    continue
+                raise RuntimeError(f"Network error for {url}: {exc}") from exc
 
     def get_json(self, url: str) -> Any:
         raw = self._request(url, "application/vnd.github+json")
@@ -387,6 +464,8 @@ def write_markdown(path: Path, generated_at: str, stats: List[Dict[str, Any]], r
         notes = []
         if item.get("error"):
             notes.append(f"error={item['error']}")
+        if item.get("warning"):
+            notes.append(f"warning={item['warning']}")
         if item.get("repo"):
             notes.append(item["repo"])
         if item.get("fallback"):
@@ -418,6 +497,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--csv", default="data/skills.csv", help="CSV output path")
     parser.add_argument("--markdown", default="docs/latest.md", help="Markdown summary path")
     parser.add_argument("--max-skills", type=int, default=0, help="Optional max number of unique skills")
+    parser.add_argument(
+        "--min-total",
+        type=int,
+        default=1,
+        help="Minimum total unique skills required to write outputs (0 disables guard)",
+    )
+    parser.add_argument("--timeout", type=float, default=30.0, help="HTTP request timeout in seconds")
+    parser.add_argument("--max-retries", type=int, default=2, help="Retry attempts for transient request errors")
+    parser.add_argument(
+        "--retry-delay",
+        type=float,
+        default=1.0,
+        help="Base retry delay in seconds (exponential backoff)",
+    )
     parser.add_argument("--github-token", default="", help="GitHub token (fallback to GITHUB_TOKEN env)")
     return parser.parse_args()
 
@@ -432,9 +525,20 @@ def main() -> None:
     sources = config.get("sources", [])
     if not sources:
         raise SystemExit("No sources configured")
+    if args.min_total < 0:
+        raise SystemExit("--min-total must be >= 0")
+    if args.max_retries < 0:
+        raise SystemExit("--max-retries must be >= 0")
+    if args.retry_delay < 0:
+        raise SystemExit("--retry-delay must be >= 0")
 
     token = args.github_token or os.getenv("GITHUB_TOKEN", "") or os.getenv("GH_TOKEN", "")
-    client = GitHubClient(token=token)
+    client = GitHubClient(
+        token=token,
+        timeout=args.timeout,
+        max_retries=args.max_retries,
+        retry_delay=args.retry_delay,
+    )
 
     all_records: List[SkillRecord] = []
     stats: List[Dict[str, Any]] = []
@@ -482,6 +586,11 @@ def main() -> None:
     merged = merge_records(all_records)
     if args.max_skills > 0:
         merged = merged[: args.max_skills]
+    if args.min_total > 0 and len(merged) < args.min_total:
+        raise SystemExit(
+            f"Total unique skills {len(merged)} is below --min-total {args.min_total}; "
+            "refusing to overwrite outputs"
+        )
 
     generated_at = utc_now()
     payload = {

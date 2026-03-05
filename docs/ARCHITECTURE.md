@@ -27,6 +27,18 @@
   - `--top <N>`: control top repositories in stats output
 - Goal: reduce multi-step command chains into one deterministic entry point.
 
+## Bundle Sync Guard
+
+- Script: `scripts/sync_skill_bundle.py`
+- Purpose: keep mirrored files under `skills/public/soskill/` aligned with root project files.
+- Coverage:
+  - all runnable scripts in `scripts/*.py` that are shipped with the skill bundle
+  - mirrored configs and reference docs (`config/*.json`, selected docs)
+- Modes:
+  - sync mode: copy changed files to bundle
+  - check mode: fail fast when drift exists (`--check`)
+- CI and tests both execute check mode to prevent release drift.
+
 ## Collection Organize Pipeline (Offline-first)
 
 1. (Optional) Bootstrap local repositories from seed config:
@@ -65,8 +77,11 @@
 
 ## Automation
 
-GitHub Actions workflow (`.github/workflows/refresh-skills.yml`) supports:
-
-- manual trigger (`workflow_dispatch`)
-- external trigger (`repository_dispatch` with `event_type=refresh-skills`)
-- scheduled refresh (every 6 hours)
+- `.github/workflows/refresh-skills.yml`
+  - manual trigger (`workflow_dispatch`)
+  - external trigger (`repository_dispatch` with `event_type=refresh-skills`)
+  - scheduled refresh (every 6 hours)
+- `.github/workflows/quality-checks.yml`
+  - run compile checks for mirrored scripts
+  - run bundle drift check (`scripts/sync_skill_bundle.py --check`)
+  - run pytest suite

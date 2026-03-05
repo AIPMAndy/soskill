@@ -1,0 +1,32 @@
+name: Quality Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  python-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependencies
+        run: python3 -m pip install --upgrade pip pytest
+
+      - name: Compile scripts
+        run: |
+          python3 -m py_compile scripts/*.py
+          python3 -m py_compile skills/public/soskill/scripts/*.py
+
+      - name: Check bundle sync
+        run: python3 scripts/sync_skill_bundle.py --check
+
+      - name: Run tests
+        run: pytest -q

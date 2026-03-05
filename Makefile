@@ -1,4 +1,4 @@
-.PHONY: refresh refresh-fast stats organize organize-local bootstrap-collections bootstrap-collections-dry offline-local audit audit-deep workflow workflow-full workflow-offline workflow-offline-dry
+.PHONY: refresh refresh-fast stats organize organize-local bootstrap-collections bootstrap-collections-dry offline-local audit audit-deep workflow workflow-full workflow-offline workflow-offline-dry sync-skill-bundle check-bundle-sync test
 
 LOCAL_ROOT ?= .cache/collections
 
@@ -46,3 +46,12 @@ workflow-offline:
 
 workflow-offline-dry:
 	python3 scripts/run_workflow.py --mode offline --out-dir data --skills-input data/skills.json --local-root "$(LOCAL_ROOT)" --bootstrap-dry-run --dry-run
+
+sync-skill-bundle:
+	python3 scripts/sync_skill_bundle.py
+
+check-bundle-sync:
+	python3 scripts/sync_skill_bundle.py --check
+
+test:
+	pytest -q

@@ -161,6 +161,14 @@ python3 scripts/run_workflow.py --mode offline --out-dir data --skills-input dat
 python3 scripts/run_workflow.py --mode offline --out-dir data --skills-input data/skills.json --bootstrap-dry-run --dry-run
 ```
 
+## ✅ Development Checks
+
+```bash
+make sync-skill-bundle   # sync mirrored files into skills/public/soskill
+make check-bundle-sync   # fail when mirrored files drift
+make test                # run pytest suite
+```
+
 ## 🤝 Author
 
 **Andy | AI Product Expert**
@@ -247,6 +255,9 @@ make workflow         # 一键安全流程（抓取+统计+审核）
 make workflow-full    # 一键全流程（抓取+统计+审核+整理）
 make workflow-offline # 一键离线流程（拉取集合+本地整理）
 make workflow-offline-dry # 离线流程预演（不执行 clone/pull）
+make sync-skill-bundle # 同步仓库脚本到技能包
+make check-bundle-sync # 检查仓库脚本与技能包是否漂移
+make test             # 运行 pytest 自动化测试
 ```
 
 ## 📦 输出文件
@@ -316,11 +327,17 @@ python3 scripts/run_workflow.py --mode offline --out-dir data --skills-input dat
 
 ## 🔄 自动更新
 
-工作流文件：`.github/workflows/refresh-skills.yml`
+工作流文件：
 
-- **手动触发**：`workflow_dispatch`
-- **外部触发**：`repository_dispatch`（`refresh-skills`）
-- **定时触发**：每 6 小时自动抓取
+- `.github/workflows/refresh-skills.yml`（聚合数据自动刷新）
+- `.github/workflows/quality-checks.yml`（编译检查 + bundle 同步检查 + pytest）
+
+- `refresh-skills.yml`
+  - **手动触发**：`workflow_dispatch`
+  - **外部触发**：`repository_dispatch`（`refresh-skills`）
+  - **定时触发**：每 6 小时自动抓取
+- `quality-checks.yml`
+  - **PR / main push** 自动执行质量门禁
 
 ## 📁 项目结构
 
@@ -334,8 +351,12 @@ soskill/
 │   ├── fetch_skills.py       # 抓取脚本
 │   ├── audit_skills.py       # 风险审核脚本
 │   ├── run_workflow.py       # 一键工作流脚本
+│   ├── sync_skill_bundle.py  # 同步仓库与技能包镜像文件
 │   ├── organize_collections.py
 │   └── bootstrap_collections.py
+├── tests/
+│   ├── test_run_workflow.py  # workflow 参数与行为测试
+│   └── test_bundle_sync.py   # 脚本镜像一致性测试
 ├── data/
 │   ├── skills.json           # 聚合数据
 │   ├── skills.csv
@@ -345,7 +366,8 @@ soskill/
 │   ├── skills-audit.md       # 审核报告
 │   └── ARCHITECTURE.md       # 架构说明
 └── .github/workflows/
-    └── refresh-skills.yml    # 自动化工作流
+    ├── refresh-skills.yml    # 自动刷新
+    └── quality-checks.yml    # 质量检查
 ```
 
 ## 🤝 贡献
