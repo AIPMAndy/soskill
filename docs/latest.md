@@ -1,7 +1,7 @@
 # SoSkill Snapshot
 
-- Generated at: `2026-03-06T13:20:27+00:00`
-- Total unique skills: `3130`
+- Generated at: `2026-03-06T19:02:39+00:00`
+- Total unique skills: `3131`
 
 ## Source Coverage
 
@@ -9,7 +9,7 @@
 |---|---:|---:|---|
 | openai-curated | github_tree | 35 | openai/skills; frontmatter=35 |
 | openai-system | github_tree | 3 | openai/skills; frontmatter=3 |
-| voltagent-awesome | markdown_links | 845 |  |
+| voltagent-awesome | markdown_links | 846 |  |
 | aipmandy-cn | markdown_links | 2709 |  |
 
 ## Sample Skills (Top 100)

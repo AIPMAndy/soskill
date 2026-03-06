@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-06T13:20:27+00:00",
-  "total": 3130,
+  "generated_at": "2026-03-06T19:02:39+00:00",
+  "total": 3131,
   "sources": [
     {
       "source_id": "openai-curated",
@@ -24,7 +24,7 @@
       "source_id": "voltagent-awesome",
       "type": "markdown_links",
       "readme_url": "https://raw.githubusercontent.com/VoltAgent/awesome-openclaw-skills/main/README.md",
-      "count": 845
+      "count": 846
     },
     {
       "source_id": "aipmandy-cn",
@@ -9763,6 +9763,20 @@
       "source_ids": [
         "voltagent-awesome",
         "aipmandy-cn"
+      ]
+    },
+    {
+      "uid": "openclaw/skills:skills/billylui/calendar-scheduling/SKILL.md",
+      "name": "calendar-scheduling",
+      "description": "",
+      "slug": "calendar-scheduling",
+      "repo": "openclaw/skills",
+      "branch": "main",
+      "path": "skills/billylui/calendar-scheduling/SKILL.md",
+      "html_url": "https://github.com/openclaw/skills/blob/main/skills/billylui/calendar-scheduling/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/billylui/calendar-scheduling/SKILL.md",
+      "source_ids": [
+        "voltagent-awesome"
       ]
     },
     {
