@@ -1,7 +1,7 @@
 # SoSkill Snapshot
 
-- Generated at: `2026-03-11T02:49:01+00:00`
-- Total unique skills: `3132`
+- Generated at: `2026-03-11T07:10:52+00:00`
+- Total unique skills: `3134`
 
 ## Source Coverage
 
@@ -9,7 +9,7 @@
 |---|---:|---:|---|
 | openai-curated | github_tree | 35 | openai/skills; frontmatter=35 |
 | openai-system | github_tree | 3 | openai/skills; frontmatter=3 |
-| voltagent-awesome | markdown_links | 847 |  |
+| voltagent-awesome | markdown_links | 849 |  |
 | aipmandy-cn | markdown_links | 2709 |  |
 
 ## Sample Skills (Top 100)
@@ -23,6 +23,7 @@
 | 1 | voltagent-awesome,aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/nastrology/1/SKILL.md) |
 | 12306 | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/kirorab/12306/SKILL.md) |
 | 13-day-sprint-method | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/galizki/13-day-sprint-method/SKILL.md) |
+| 1claw | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/kmjones1979/1claw/SKILL.md) |
 | 1p-shortlink | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/tuanpmt/1p-shortlink/SKILL.md) |
 | 1password | voltagent-awesome,aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/steipete/1password/SKILL.md) |
 | 1sec-security | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/cutmob/1sec-security/SKILL.md) |
@@ -115,4 +116,3 @@
 | adspirer-ads-agent | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/amekala/adspirer-ads-agent/SKILL.md) |
 | advanced-calendar | voltagent-awesome,aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/toughworm/advanced-calendar/SKILL.md) |
 | advanced-skill-creator | voltagent-awesome,aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/xqicxx/advanced-skill-creator/SKILL.md) |
-| adversarial-coach | voltagent-awesome,aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/killerapp/adversarial-coach/SKILL.md) |

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-11T02:49:01+00:00",
-  "total": 3132,
+  "generated_at": "2026-03-11T07:10:52+00:00",
+  "total": 3134,
   "sources": [
     {
       "source_id": "openai-curated",
@@ -24,7 +24,7 @@
       "source_id": "voltagent-awesome",
       "type": "markdown_links",
       "readme_url": "https://raw.githubusercontent.com/VoltAgent/awesome-openclaw-skills/main/README.md",
-      "count": 847
+      "count": 849
     },
     {
       "source_id": "aipmandy-cn",
@@ -129,6 +129,20 @@
       "path": "skills/galizki/13-day-sprint-method/SKILL.md",
       "html_url": "https://github.com/openclaw/skills/blob/main/skills/galizki/13-day-sprint-method/SKILL.md",
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/galizki/13-day-sprint-method/SKILL.md",
+      "source_ids": [
+        "voltagent-awesome"
+      ]
+    },
+    {
+      "uid": "openclaw/skills:skills/kmjones1979/1claw/SKILL.md",
+      "name": "1claw",
+      "description": "",
+      "slug": "1claw",
+      "repo": "openclaw/skills",
+      "branch": "main",
+      "path": "skills/kmjones1979/1claw/SKILL.md",
+      "html_url": "https://github.com/openclaw/skills/blob/main/skills/kmjones1979/1claw/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/kmjones1979/1claw/SKILL.md",
       "source_ids": [
         "voltagent-awesome"
       ]
@@ -8560,6 +8574,20 @@
       "source_ids": [
         "voltagent-awesome",
         "aipmandy-cn"
+      ]
+    },
+    {
+      "uid": "openclaw/skills:skills/varsmallrookie/bluente-translate/SKILL.md",
+      "name": "bluente-translate",
+      "description": "",
+      "slug": "bluente-translate",
+      "repo": "openclaw/skills",
+      "branch": "main",
+      "path": "skills/varsmallrookie/bluente-translate/SKILL.md",
+      "html_url": "https://github.com/openclaw/skills/blob/main/skills/varsmallrookie/bluente-translate/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/varsmallrookie/bluente-translate/SKILL.md",
+      "source_ids": [
+        "voltagent-awesome"
       ]
     },
     {
