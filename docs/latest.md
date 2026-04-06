@@ -1,6 +1,6 @@
 # SoSkill Snapshot
 
-- Generated at: `2026-04-05T19:03:14+00:00`
+- Generated at: `2026-04-06T03:40:02+00:00`
 - Total unique skills: `2759`
 
 ## Source Coverage
