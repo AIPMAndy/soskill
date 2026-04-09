@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T19:39:42+00:00",
+  "generated_at": "2026-04-09T03:27:32+00:00",
   "total": 2759,
   "sources": [
     {
@@ -30054,7 +30054,7 @@
     {
       "uid": "openai/skills:skills/.curated/sentry/SKILL.md",
       "name": "sentry",
-      "description": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry API; perform read-only queries with the bundled script and require `SENTRY_AUTH_TOKEN`.",
+      "description": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` command.",
       "slug": "sentry",
       "repo": "openai/skills",
       "branch": "main",
