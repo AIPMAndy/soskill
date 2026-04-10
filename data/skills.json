@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-10T13:48:28+00:00",
-  "total": 2759,
+  "generated_at": "2026-04-10T19:10:45+00:00",
+  "total": 2760,
   "sources": [
     {
       "source_id": "openai-curated",
       "type": "github_tree",
       "repo": "openai/skills",
       "branch": "main",
-      "count": 42,
+      "count": 43,
       "truncated": false,
-      "frontmatter_enriched": 42
+      "frontmatter_enriched": 43
     },
     {
       "source_id": "openai-system",
@@ -7775,6 +7775,20 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/themrzz/cleanup/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
+      ]
+    },
+    {
+      "uid": "openai/skills:skills/.curated/cli-creator/SKILL.md",
+      "name": "cli-creator",
+      "description": "Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill.",
+      "slug": "cli-creator",
+      "repo": "openai/skills",
+      "branch": "main",
+      "path": "skills/.curated/cli-creator/SKILL.md",
+      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/cli-creator/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/cli-creator/SKILL.md",
+      "source_ids": [
+        "openai-curated"
       ]
     },
     {
