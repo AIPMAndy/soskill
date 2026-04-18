@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T19:20:47+00:00",
-  "total": 2758,
+  "generated_at": "2026-04-18T03:29:24+00:00",
+  "total": 2759,
   "sources": [
     {
       "source_id": "openai-curated",
@@ -16,9 +16,9 @@
       "type": "github_tree",
       "repo": "openai/skills",
       "branch": "main",
-      "count": 4,
+      "count": 5,
       "truncated": false,
-      "frontmatter_enriched": 4
+      "frontmatter_enriched": 5
     },
     {
       "source_id": "voltagent-awesome",
@@ -25751,6 +25751,20 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/anjor/pltr-cli/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
+      ]
+    },
+    {
+      "uid": "openai/skills:skills/.system/plugin-creator/SKILL.md",
+      "name": "plugin-creator",
+      "description": "Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use when Codex needs to create a new local plugin, add optional plugin structure, or generate or update repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metadata.",
+      "slug": "plugin-creator",
+      "repo": "openai/skills",
+      "branch": "main",
+      "path": "skills/.system/plugin-creator/SKILL.md",
+      "html_url": "https://github.com/openai/skills/blob/main/skills/.system/plugin-creator/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.system/plugin-creator/SKILL.md",
+      "source_ids": [
+        "openai-system"
       ]
     },
     {
