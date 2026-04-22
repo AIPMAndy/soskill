@@ -50,6 +50,31 @@ python3 scripts/run_workflow.py --mode secure-refresh --out-dir data
 
 ---
 
+## 🤖 新功能：自动 Skill 匹配引擎
+
+**不知道装哪个 Skill？让 AI 帮你选！**
+
+```bash
+# 智能推荐最合适的 Skill
+python3 scripts/auto_skill_matcher.py "我想自动化飞书日历管理"
+
+# 输出：
+# 1. feishu-calendar ✅ (相关度 0.80)
+# 2. feishu-task 🟢 (相关度 0.75)
+# 3. ai-life-os 🟢 (相关度 0.70)
+```
+
+**特点：**
+- ✅ 智能意图识别：自动分析用户需求
+- ✅ 多维度匹配：名称 + 描述 + 标签
+- ✅ 安全优先：自动过滤高风险 Skill
+- ✅ 中英文支持：支持中英文混合搜索
+- ✅ 一键安装：提供可直接执行的安装命令
+
+**详细文档：** [AUTO_MATCHER.md](AUTO_MATCHER.md)
+
+---
+
 ## 🛡️ 安全审核（核心亮点）
 
 这是 SoSkill 区别于"普通 awesome list"的关键能力。
