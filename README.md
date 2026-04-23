@@ -50,7 +50,7 @@ python3 scripts/run_workflow.py --mode secure-refresh --out-dir data
 
 ---
 
-## 🤖 新功能：自动 Skill 匹配引擎
+## 🤖 新功能：自动 Skill 匹配引擎（v2.1）
 
 **不知道装哪个 Skill？让 AI 帮你选！**
 
@@ -64,14 +64,20 @@ python3 scripts/auto_skill_matcher.py "我想自动化飞书日历管理"
 # 3. ai-life-os 🟢 (相关度 0.70)
 ```
 
-**特点：**
-- ✅ 智能意图识别：自动分析用户需求
-- ✅ 多维度匹配：名称 + 描述 + 标签
-- ✅ 安全优先：自动过滤高风险 Skill
-- ✅ 中英文支持：支持中英文混合搜索
-- ✅ 一键安装：提供可直接执行的安装命令
+**核心特点：**
+- ✅ **智能意图识别**：自动分析用户需求，支持 10+ 意图类别
+- ✅ **多维度匹配**：名称直接匹配 + 描述匹配 + 意图匹配
+- ✅ **安全优先**：自动过滤 critical/high 风险 Skill
+- ✅ **中英文支持**：支持中英文混合搜索
+- ✅ **一键安装**：提供可直接执行的安装命令
+- ✅ **OpenClaw 集成**：支持对话触发、心跳触发、Cron 定时
 
-**详细文档：** [AUTO_MATCHER.md](AUTO_MATCHER.md)
+**支持的意图类别：**
+数据分析、文档处理、代码开发、自动化、AI/ML、Web开发、内容创作、项目管理、安全审计、飞书集成
+
+**详细文档：**
+- [AUTO_MATCHER.md](AUTO_MATCHER.md) — 匹配引擎详细说明
+- [OPENCLAW_INTEGRATION.md](OPENCLAW_INTEGRATION.md) — OpenClaw 集成指南
 
 ---
 
@@ -131,7 +137,19 @@ make audit-deep     # 深度审核（联网拉取 SKILL.md 内容）
 
 ---
 
-## 🚀 v2.0 新特性
+## 🚀 版本更新
+
+### v2.1 (2026-04-23)
+
+**🤖 自动 Skill 匹配引擎**
+- 新增 `auto_skill_matcher.py`：智能推荐最合适的 Skill
+- 支持中英文混合搜索，多维度匹配算法
+- 自动过滤高风险 Skill，安全优先
+- 支持意图识别：数据分析、文档处理、代码开发等 10+ 类别
+- 提供 OpenClaw 集成方案（对话触发、心跳触发、Cron 定时）
+- 新增详细文档：`AUTO_MATCHER.md` 和 `OPENCLAW_INTEGRATION.md`
+
+### v2.0 新特性
 
 ### 增量更新（ETag 缓存）
 ```bash
@@ -161,10 +179,12 @@ python3 scripts/recommender.py
 | 指标 | 数值 |
 |------|------|
 | 数据源 | 6+ |
-| 代码行数 | 4800+ |
-| 测试覆盖 | 2 个测试文件 |
+| 代码行数 | 6000+ |
+| 核心脚本 | 14 个 |
+| 测试覆盖 | 3 个测试文件 |
 | 自动更新 | 每 6 小时 |
 | 安全规则 | 10+ 条 |
+| 意图类别 | 10+ 个 |
 
 ---
 
@@ -177,9 +197,12 @@ python3 scripts/recommender.py
 - [x] 增量更新 + 缓存
 - [x] 质量评分系统
 - [x] GitHub 项目推荐
+- [x] 🆕 自动 Skill 匹配引擎
+- [x] 🆕 OpenClaw 集成方案
 - [ ] Web UI 搜索界面
-- [ ] AI 驱动的语义搜索
+- [ ] AI 驱动的语义搜索（embedding）
 - [ ] Skill 相似度去重
+- [ ] 用户偏好学习
 
 ---
 
