@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-23T14:09:13+00:00",
-  "total": 2768,
+  "generated_at": "2026-04-23T19:40:12+00:00",
+  "total": 2766,
   "sources": [
     {
       "source_id": "openai-curated",
       "type": "github_tree",
       "repo": "openai/skills",
       "branch": "main",
-      "count": 40,
+      "count": 38,
       "truncated": false,
-      "frontmatter_enriched": 40
+      "frontmatter_enriched": 38
     },
     {
       "source_id": "openai-system",
@@ -10340,20 +10340,6 @@
       ]
     },
     {
-      "uid": "openai/skills:skills/.curated/develop-web-game/SKILL.md",
-      "name": "develop-web-game",
-      "description": "Use when Codex is building or iterating on a web game (HTML/JS) and needs a reliable development + testing loop: implement small changes, run a Playwright-based test script with short input bursts and intentional pauses, inspect screenshots/text, and review console errors with render_game_to_text.",
-      "slug": "develop-web-game",
-      "repo": "openai/skills",
-      "branch": "main",
-      "path": "skills/.curated/develop-web-game/SKILL.md",
-      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/develop-web-game/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/develop-web-game/SKILL.md",
-      "source_ids": [
-        "openai-curated"
-      ]
-    },
-    {
       "uid": "openclaw/skills:skills/jgm2025/devialet/SKILL.md",
       "name": "devialet",
       "description": "",
@@ -13767,20 +13753,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/steipete/frontend-design/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openai/skills:skills/.curated/frontend-skill/SKILL.md",
-      "name": "frontend-skill",
-      "description": "Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This skill enforces restrained composition, image-led hierarchy, cohesive content structure, and tasteful motion while avoiding generic cards, weak branding, and UI clutter.",
-      "slug": "frontend-skill",
-      "repo": "openai/skills",
-      "branch": "main",
-      "path": "skills/.curated/frontend-skill/SKILL.md",
-      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/frontend-skill/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/frontend-skill/SKILL.md",
-      "source_ids": [
-        "openai-curated"
       ]
     },
     {
