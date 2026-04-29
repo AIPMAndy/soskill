@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-29T04:01:23+00:00",
-  "total": 2767,
+  "generated_at": "2026-04-29T08:31:47+00:00",
+  "total": 2766,
   "sources": [
     {
       "source_id": "openai-curated",
       "type": "github_tree",
       "repo": "openai/skills",
       "branch": "main",
-      "count": 39,
+      "count": 38,
       "truncated": false,
-      "frontmatter_enriched": 39
+      "frontmatter_enriched": 38
     },
     {
       "source_id": "openai-system",
@@ -31856,20 +31856,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/zayresz/sophie-optimizer/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openai/skills:skills/.curated/sora/SKILL.md",
-      "name": "sora",
-      "description": "Use when the user asks to generate, edit, extend, poll, list, download, or delete Sora videos, create reusable non-human Sora character references, or run local multi-video queues via the bundled CLI (`scripts/sora.py`); includes requests like: (i) generate AI video, (ii) edit this Sora clip, (iii) extend this video, (iv) create a character reference, (v) download video/thumbnail/spritesheet, and (vi) Sora batch planning; requires `OPENAI_API_KEY` and Sora API access.",
-      "slug": "sora",
-      "repo": "openai/skills",
-      "branch": "main",
-      "path": "skills/.curated/sora/SKILL.md",
-      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/sora/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/sora/SKILL.md",
-      "source_ids": [
-        "openai-curated"
       ]
     },
     {
