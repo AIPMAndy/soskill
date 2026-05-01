@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T13:53:12+00:00",
+  "generated_at": "2026-05-01T19:37:03+00:00",
   "total": 2766,
   "sources": [
     {
@@ -10648,20 +10648,6 @@
       ]
     },
     {
-      "uid": "openai/skills:skills/.curated/doc/SKILL.md",
-      "name": "doc",
-      "description": "Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus the bundled `scripts/render_docx.py` for visual checks.",
-      "slug": "doc",
-      "repo": "openai/skills",
-      "branch": "main",
-      "path": "skills/.curated/doc/SKILL.md",
-      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/doc/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/doc/SKILL.md",
-      "source_ids": [
-        "openai-curated"
-      ]
-    },
-    {
       "uid": "openclaw/skills:skills/seanphan/doc-coauthoring/SKILL.md",
       "name": "doc-coauthoring",
       "description": "",
@@ -15713,6 +15699,20 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/udiedrichsen/harvey/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
+      ]
+    },
+    {
+      "uid": "openai/skills:skills/.curated/hatch-pet/SKILL.md",
+      "name": "hatch-pet",
+      "description": "Create, repair, validate, preview, and package Codex-compatible animated pet spritesheets from character art, screenshots, generated images, or visual references. Use when a user wants to hatch a Codex pet, create a custom animated pet, or build a built-in pet asset with an 8x9 atlas, transparent unused cells, row-by-row animation prompts, QA contact sheets, preview videos, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.",
+      "slug": "hatch-pet",
+      "repo": "openai/skills",
+      "branch": "main",
+      "path": "skills/.curated/hatch-pet/SKILL.md",
+      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/hatch-pet/SKILL.md",
+      "source_ids": [
+        "openai-curated"
       ]
     },
     {
