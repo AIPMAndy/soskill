@@ -70,8 +70,8 @@ class SkillMatcher:
     """Skill 匹配引擎"""
     
     def __init__(self, skills_path: Path, audit_path: Optional[Path] = None):
-        self.skills_path = skills_path
-        self.audit_path = audit_path
+        self.skills_path = Path(skills_path)
+        self.audit_path = Path(audit_path) if audit_path else None
         self.skills = self._load_skills()
         self.audit_data = self._load_audit() if audit_path else {}
     
@@ -102,47 +102,59 @@ class SkillMatcher:
             return {skill['name']: skill for skill in data.get('skills', [])}
     
     def _calculate_relevance(self, skill: Dict[str, Any], intents: List[str], user_input: str) -> float:
-        """计算 Skill 与需求的相关度 (0-1)"""
+        """计算 Skill 与需求的相关度 (0-1) - 极简版，只看 name"""
         score = 0.0
         
         name = skill.get('name', '').lower()
-        description = skill.get('description', '').lower()
         user_input_lower = user_input.lower()
         
-        # 1. Skill 名称直接匹配（权重 0.5）
-        for keyword_group, keywords in NeedAnalyzer.SKILL_NAME_KEYWORDS.items():
-            if keyword_group in name:
-                for keyword in keywords:
-                    if keyword.lower() in user_input_lower:
-                        score += 0.5
+        # 中文关键词映射（按优先级排序）
+        keyword_map = {
+            '飞书': ['feishu', 'lark'],  # 最高优先级
+            '文档': ['doc'],
+            '表格': ['sheet', 'bitable'],
+            '日历': ['calendar'],
+            '任务': ['task'],
+            '维基': ['wiki'],
+            '云空间': ['drive'],
+        }
+        
+        # 1. 名称完全匹配 → 1.0
+        if user_input_lower in name or name in user_input_lower:
+            return 1.0
+        
+        # 2. 中文关键词匹配（累加得分，多个关键词匹配得分更高）
+        matched_keywords = 0
+        for cn_word, en_words in keyword_map.items():
+            if cn_word in user_input_lower:
+                # 检查英文关键词是否在 name 中
+                for en_word in en_words:
+                    if en_word in name:
+                        matched_keywords += 1
+                        # 飞书相关的权重更高
+                        if cn_word == '飞书':
+                            score += 0.6
+                        else:
+                            score += 0.3
                         break
         
-        # 2. 名称包含意图关键词（权重 0.3）
-        for intent in intents:
-            intent_lower = intent.lower()
-            if intent_lower in name or any(kw.lower() in name for kw in NeedAnalyzer.INTENT_KEYWORDS.get(intent, [])):
-                score += 0.3
-                break
+        # 3. 英文关键词直接匹配（用户直接输入英文）
+        # 提取用户输入中的英文单词（长度 > 2）
+        import re
+        user_words = re.findall(r'\b[a-z]{3,}\b', user_input_lower)
+        for word in user_words:
+            if word in name:
+                score += 0.5
+                matched_keywords += 1
         
-        # 3. 描述匹配（权重 0.4）
-        if description:  # 只有当描述不为空时才计算
-            # 关键词匹配
-            user_keywords = set(re.findall(r'\w+', user_input_lower))
-            desc_keywords = set(re.findall(r'\w+', description))
-            common_keywords = user_keywords & desc_keywords
-            
-            if common_keywords:
-                score += 0.4 * min(len(common_keywords) / 5, 1.0)
+        # 如果匹配了多个关键词，额外加分
+        if matched_keywords >= 2:
+            score += 0.2
         
-        # 4. 意图匹配（权重 0.3）
-        for intent in intents:
-            intent_keywords = NeedAnalyzer.INTENT_KEYWORDS.get(intent, [])
-            for keyword in intent_keywords:
-                if keyword.lower() in description:
-                    score += 0.3 / len(intents)
-                    break
+        # 限制最高分为 0.95（低于完全匹配）
+        score = min(score, 0.95)
         
-        return min(score, 1.0)
+        return score
     
     def _get_safety_level(self, skill_name: str) -> str:
         """获取 Skill 的安全等级"""
@@ -177,8 +189,9 @@ class SkillMatcher:
         analyzer = NeedAnalyzer()
         intents = analyzer.analyze(user_input)
         
-        if not intents:
-            return []
+        # 注释掉这个过滤，允许英文关键词直接匹配
+        # if not intents:
+        #     return []
         
         # 计算每个 Skill 的相关度
         matches = []
@@ -215,7 +228,19 @@ def format_output(matches: List[SkillMatch], format: str = "markdown") -> str:
     if not matches:
         return "未找到匹配的 Skill"
     
-    if format == "markdown":
+    if format == "simple":
+        # 极简输出：每个 Skill 只显示 1 行
+        output = ["🔍 推荐的 Skill:\n"]
+        
+        for i, match in enumerate(matches[:3], 1):  # 只显示前 3 个
+            safety = {"clean": "✅", "low": "🟢", "medium": "🟡"}.get(match.safety_level, "❓")
+            desc_short = match.description[:50] + "..." if len(match.description) > 50 else match.description
+            output.append(f"{i}. {match.name} {safety} - {desc_short}")
+        
+        output.append("\n💡 查看完整列表: 添加 --format markdown")
+        return "\n".join(output)
+    
+    elif format == "markdown":
         output = ["# 推荐的 Skill\n"]
         
         for i, match in enumerate(matches, 1):
@@ -266,9 +291,9 @@ def main():
     parser.add_argument("query", help="用户需求描述")
     parser.add_argument("--skills", default="data/skills.json", help="skills.json 路径")
     parser.add_argument("--audit", default="data/skills.audit.json", help="审核数据路径")
+    parser.add_argument("--format", choices=["simple", "markdown", "json"], default="simple", help="输出格式")
     parser.add_argument("--top-k", type=int, default=5, help="返回前 K 个结果")
     parser.add_argument("--min-score", type=float, default=0.3, help="最低相关度阈值")
-    parser.add_argument("--format", choices=["markdown", "json"], default="markdown", help="输出格式")
     
     args = parser.parse_args()
     
