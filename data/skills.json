@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T20:05:50+00:00",
+  "generated_at": "2026-05-13T04:11:16+00:00",
   "total": 2766,
   "sources": [
     {
@@ -15704,7 +15704,7 @@
     {
       "uid": "openai/skills:skills/.curated/hatch-pet/SKILL.md",
       "name": "hatch-pet",
-      "description": "Create, repair, validate, preview, and package Codex-compatible animated pets and pet spritesheets from character art, screenshots, generated images, or visual references. Use when a user wants to hatch a Codex pet, create a custom animated pet, or build a built-in pet asset with an 8x9 atlas, transparent unused cells, row-by-row animation prompts, QA contact sheets, preview videos, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.",
+      "description": "Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.",
       "slug": "hatch-pet",
       "repo": "openai/skills",
       "branch": "main",
