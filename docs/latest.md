@@ -1,7 +1,7 @@
 # SoSkill Snapshot
 
-- Generated at: `2026-05-15T14:33:56+00:00`
-- Total unique skills: `2766`
+- Generated at: `2026-05-15T19:52:47+00:00`
+- Total unique skills: `2768`
 
 ## Source Coverage
 
@@ -9,7 +9,7 @@
 |---|---:|---:|---|
 | openai-curated | github_tree | 38 | openai/skills; frontmatter=38 |
 | openai-system | github_tree | 5 | openai/skills; frontmatter=5 |
-| voltagent-awesome | markdown_links | 14 |  |
+| voltagent-awesome | markdown_links | 16 |  |
 | aipmandy-cn | markdown_links | 2711 |  |
 
 ## Sample Skills (Top 100)
@@ -104,6 +104,7 @@
 | agent-voice | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/nerdsnipe/agent-voice/SKILL.md) |
 | agent-zero-bridge | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/dowingard/agent-zero-bridge/SKILL.md) |
 | agentarxiv | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/amanbhandula/agentarxiv/SKILL.md) |
+| agentbase | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/revmischa/agentbase/SKILL.md) |
 | agentbus-relay-chat | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/dantunes-github/agentbus-relay-chat/SKILL.md) |
 | agentchat | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/tjamescouch/agentchat/SKILL.md) |
 | agentgram | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/iisweetheartii/agentgram/SKILL.md) |
@@ -115,4 +116,3 @@
 | agentic-compass | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/orosha-ai/agentic-compass/SKILL.md) |
 | agentic-paper-digest | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/matanle51/agentic-paper-digest/SKILL.md) |
 | agentic-paper-digest-skill | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/matanle51/agentic-paper-digest-skill/SKILL.md) |
-| agenticflow-skill | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/seanphan/agenticflow-skill/SKILL.md) |
