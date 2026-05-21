@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-21T15:50:10+00:00",
-  "total": 2768,
+  "generated_at": "2026-05-21T20:08:03+00:00",
+  "total": 2769,
   "sources": [
     {
       "source_id": "openai-curated",
       "type": "github_tree",
       "repo": "openai/skills",
       "branch": "main",
-      "count": 38,
+      "count": 39,
       "truncated": false,
-      "frontmatter_enriched": 38
+      "frontmatter_enriched": 39
     },
     {
       "source_id": "openai-system",
@@ -10197,6 +10197,20 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/arun-8687/deepwiki/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
+      ]
+    },
+    {
+      "uid": "openai/skills:skills/.curated/define-goal/SKILL.md",
+      "name": "define-goal",
+      "description": "Help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy intention into a quantitative outcome. Use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts.",
+      "slug": "define-goal",
+      "repo": "openai/skills",
+      "branch": "main",
+      "path": "skills/.curated/define-goal/SKILL.md",
+      "html_url": "https://github.com/openai/skills/blob/main/skills/.curated/define-goal/SKILL.md",
+      "raw_url": "https://raw.githubusercontent.com/openai/skills/main/skills/.curated/define-goal/SKILL.md",
+      "source_ids": [
+        "openai-curated"
       ]
     },
     {
