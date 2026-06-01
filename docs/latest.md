@@ -1,7 +1,7 @@
 # SoSkill Snapshot
 
-- Generated at: `2026-06-01T05:14:41+00:00`
-- Total unique skills: `2769`
+- Generated at: `2026-06-01T12:07:49+00:00`
+- Total unique skills: `2755`
 
 ## Source Coverage
 
@@ -9,7 +9,7 @@
 |---|---:|---:|---|
 | openai-curated | github_tree | 39 | openai/skills; frontmatter=39 |
 | openai-system | github_tree | 5 | openai/skills; frontmatter=5 |
-| voltagent-awesome | markdown_links | 16 |  |
+| voltagent-awesome | markdown_links | 0 |  |
 | aipmandy-cn | markdown_links | 2711 |  |
 
 ## Sample Skills (Top 100)
@@ -92,7 +92,6 @@
 | agent-reflect | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/stevengonsalvez/agent-reflect/SKILL.md) |
 | agent-registry | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/matrixy/agent-registry/SKILL.md) |
 | agent-relay-digest | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/orosha-ai/agent-relay-digest/SKILL.md) |
-| agent-security-harness | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/msaleme/agent-security-harness/SKILL.md) |
 | agent-self-introduction | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/ronwithlove/agent-self-introduction/SKILL.md) |
 | agent-selfie | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/iisweetheartii/agent-selfie/SKILL.md) |
 | agent-sentinel | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/jimmystacks/agent-sentinel/SKILL.md) |
@@ -104,7 +103,6 @@
 | agent-voice | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/nerdsnipe/agent-voice/SKILL.md) |
 | agent-zero-bridge | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/dowingard/agent-zero-bridge/SKILL.md) |
 | agentarxiv | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/amanbhandula/agentarxiv/SKILL.md) |
-| agentbase | voltagent-awesome | [open](https://github.com/openclaw/skills/blob/main/skills/revmischa/agentbase/SKILL.md) |
 | agentbus-relay-chat | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/dantunes-github/agentbus-relay-chat/SKILL.md) |
 | agentchat | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/tjamescouch/agentchat/SKILL.md) |
 | agentgram | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/iisweetheartii/agentgram/SKILL.md) |
@@ -116,3 +114,5 @@
 | agentic-compass | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/orosha-ai/agentic-compass/SKILL.md) |
 | agentic-paper-digest | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/matanle51/agentic-paper-digest/SKILL.md) |
 | agentic-paper-digest-skill | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/matanle51/agentic-paper-digest-skill/SKILL.md) |
+| agenticflow-skill | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/seanphan/agenticflow-skill/SKILL.md) |
+| agentlens | aipmandy-cn | [open](https://github.com/openclaw/skills/blob/main/skills/nguyenphutrong/agentlens/SKILL.md) |

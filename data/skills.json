@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-01T05:14:41+00:00",
-  "total": 2769,
+  "generated_at": "2026-06-01T12:07:49+00:00",
+  "total": 2755,
   "sources": [
     {
       "source_id": "openai-curated",
@@ -24,7 +24,7 @@
       "source_id": "voltagent-awesome",
       "type": "markdown_links",
       "readme_url": "https://raw.githubusercontent.com/VoltAgent/awesome-openclaw-skills/main/README.md",
-      "count": 16
+      "count": 0
     },
     {
       "source_id": "aipmandy-cn",
@@ -1099,20 +1099,6 @@
       ]
     },
     {
-      "uid": "openclaw/skills:skills/msaleme/agent-security-harness/SKILL.md",
-      "name": "agent-security-harness",
-      "description": "",
-      "slug": "agent-security-harness",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/msaleme/agent-security-harness/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/msaleme/agent-security-harness/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/msaleme/agent-security-harness/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
       "uid": "openclaw/skills:skills/ronwithlove/agent-self-introduction/SKILL.md",
       "name": "agent-self-introduction",
       "description": "",
@@ -1264,20 +1250,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/amanbhandula/agentarxiv/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/revmischa/agentbase/SKILL.md",
-      "name": "agentbase",
-      "description": "",
-      "slug": "agentbase",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/revmischa/agentbase/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/revmischa/agentbase/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/revmischa/agentbase/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
       ]
     },
     {
@@ -1880,20 +1852,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/rhanbourinajd/ai-video-gen/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/abu-shotai/ai-video-remix/SKILL.md",
-      "name": "ai-video-remix",
-      "description": "",
-      "slug": "ai-video-remix",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/abu-shotai/ai-video-remix/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/abu-shotai/ai-video-remix/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/abu-shotai/ai-video-remix/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
       ]
     },
     {
@@ -4403,20 +4361,6 @@
       ]
     },
     {
-      "uid": "openclaw/skills:skills/varsmallrookie/bluente-translate/SKILL.md",
-      "name": "bluente-translate",
-      "description": "",
-      "slug": "bluente-translate",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/varsmallrookie/bluente-translate/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/varsmallrookie/bluente-translate/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/varsmallrookie/bluente-translate/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
       "uid": "openclaw/skills:skills/jeffaf/bluesky/SKILL.md",
       "name": "bluesky",
       "description": "",
@@ -4512,20 +4456,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/xenofex7/bookstack/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/tonypk/boss-ai-agent/SKILL.md",
-      "name": "boss-ai-agent",
-      "description": "",
-      "slug": "boss-ai-agent",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/tonypk/boss-ai-agent/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/tonypk/boss-ai-agent/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/tonypk/boss-ai-agent/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
       ]
     },
     {
@@ -5113,7 +5043,6 @@
       "html_url": "https://github.com/clawdbot/skills/blob/main/skills/clawd-maf/cad-agent/SKILL.md",
       "raw_url": "https://raw.githubusercontent.com/clawdbot/skills/main/skills/clawd-maf/cad-agent/SKILL.md",
       "source_ids": [
-        "voltagent-awesome",
         "aipmandy-cn"
       ]
     },
@@ -11065,20 +10994,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/10e9928a/duckduckgo-search/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/duoplusofficial/duoplus-agent/SKILL.md",
-      "name": "duoplus-agent",
-      "description": "",
-      "slug": "duoplus-agent",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/duoplusofficial/duoplus-agent/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/duoplusofficial/duoplus-agent/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/duoplusofficial/duoplus-agent/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
       ]
     },
     {
@@ -26240,7 +26155,6 @@
       "html_url": "https://github.com/openclaw/skills/blob/main/skills/nevo-david/postiz/SKILL.md",
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/nevo-david/postiz/SKILL.md",
       "source_ids": [
-        "voltagent-awesome",
         "aipmandy-cn"
       ]
     },
@@ -31285,90 +31199,6 @@
       ]
     },
     {
-      "uid": "openclaw/skills:skills/gxcun17/skywork-design/SKILL.md",
-      "name": "skywork-design",
-      "description": "",
-      "slug": "skywork-design",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/gxcun17/skywork-design/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/gxcun17/skywork-design/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/gxcun17/skywork-design/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/gxcun17/skywork-document/SKILL.md",
-      "name": "skywork-document",
-      "description": "",
-      "slug": "skywork-document",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/gxcun17/skywork-document/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/gxcun17/skywork-document/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/gxcun17/skywork-document/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/gxcun17/skywork-excel/SKILL.md",
-      "name": "skywork-excel",
-      "description": "",
-      "slug": "skywork-excel",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/gxcun17/skywork-excel/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/gxcun17/skywork-excel/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/gxcun17/skywork-excel/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/gxcun17/skywork-music-maker/SKILL.md",
-      "name": "skywork-music-maker",
-      "description": "",
-      "slug": "skywork-music-maker",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/gxcun17/skywork-music-maker/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/gxcun17/skywork-music-maker/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/gxcun17/skywork-music-maker/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/gxcun17/skywork-ppt/SKILL.md",
-      "name": "skywork-ppt",
-      "description": "",
-      "slug": "skywork-ppt",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/gxcun17/skywork-ppt/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/gxcun17/skywork-ppt/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/gxcun17/skywork-ppt/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/gxcun17/skywork-search/SKILL.md",
-      "name": "skywork-search",
-      "description": "",
-      "slug": "skywork-search",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/gxcun17/skywork-search/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/gxcun17/skywork-search/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/gxcun17/skywork-search/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
-      ]
-    },
-    {
       "uid": "openclaw/skills:skills/steipete/slack/SKILL.md",
       "name": "slack",
       "description": "",
@@ -31716,20 +31546,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/mrshorrid/social-scheduler/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/socialecho-net/socialecho-social-media-management-agent/SKILL.md",
-      "name": "socialecho-social-media-management-agent",
-      "description": "",
-      "slug": "socialecho-social-media-management-agent",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/socialecho-net/socialecho-social-media-management-agent/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/socialecho-net/socialecho-social-media-management-agent/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/socialecho-net/socialecho-social-media-management-agent/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
       ]
     },
     {
@@ -34978,20 +34794,6 @@
       "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/guogang1024/trend-watcher/SKILL.md",
       "source_ids": [
         "aipmandy-cn"
-      ]
-    },
-    {
-      "uid": "openclaw/skills:skills/trent-ai-release/trentclaw/SKILL.md",
-      "name": "trentclaw",
-      "description": "",
-      "slug": "trentclaw",
-      "repo": "openclaw/skills",
-      "branch": "main",
-      "path": "skills/trent-ai-release/trentclaw/SKILL.md",
-      "html_url": "https://github.com/openclaw/skills/blob/main/skills/trent-ai-release/trentclaw/SKILL.md",
-      "raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/trent-ai-release/trentclaw/SKILL.md",
-      "source_ids": [
-        "voltagent-awesome"
       ]
     },
     {
