@@ -1,0 +1,47 @@
+# SoSkill
+
+> 🔍 SoSkill - 开源 Skill 搜索与聚合 | Open-source Skill Search & Aggregation
+
+- 作者：AI酋长Andy（AIPMAndy），官网 https://metaver.vip/
+- 开源仓库：https://github.com/AIPMAndy/soskill
+- 许可：MIT
+- 语言：中文（zh-CN）
+- 最近更新：2026-11-27
+
+## 这是什么
+
+AI Skill 搜索引擎 - 3 秒找到你需要的 OpenClaw Skill
+bash
+# 1. 克隆项目
+git clone https://github.com/AIPMAndy/soskill.git && cd soskill
+
+## 内容目录
+
+- 快速开始
+- 在线演示
+- 为什么用 SoSkill？
+- 使用示例
+- 高级用法
+- 项目结构
+- 工作原理
+- 贡献指南
+- Star 历史
+- 作者 / About the author
+- 许可证
+- 联系方式
+
+## 关键事实
+
+- 名称：SoSkill
+- 类型：中文开源项目
+- 许可：MIT
+- 语言：中文
+- 最近更新：2026-11-27
+- 仓库：https://github.com/AIPMAndy/soskill
+
+## 相关链接
+
+- [作者官网](https://metaver.vip/)
+- [GitHub 主页](https://github.com/AIPMAndy/AIPMAndy)
+- [开源总目录](https://aipmandy.github.io/)
+- [机器可读摘要](https://github.com/AIPMAndy/soskill/blob/main/llms.txt)

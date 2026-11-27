@@ -5,6 +5,29 @@ AI Skill 搜索引擎 - 3 秒找到你需要的 OpenClaw Skill
 [![Stars](https://img.shields.io/github/stars/AIPMAndy/soskill?style=social)](https://github.com/AIPMAndy/soskill)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
+<!-- andy-geo:start -->
+## 一句话简介
+
+**🔍 SoSkill - 开源 Skill 搜索与聚合 | Open-source Skill Search & Aggregation**
+
+- 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
+- 阅读或使用：[GitHub 仓库](https://github.com/AIPMAndy/soskill)
+- 联系：微信 `AIPMAndy`（备注「soskill」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 许可：MIT。内容免费使用；企业合作或个人陪跑请先沟通，公开页不公示价格。
+- 机器可读摘要：[llms.txt](llms.txt)（供 AI 引擎与检索工具读取）
+
+## 常见问题
+
+**这是什么？**🔍 SoSkill - 开源 Skill 搜索与聚合 | Open-source Skill Search & Aggregation
+
+**包含什么？**主要模块：快速开始、在线演示、为什么用 SoSkill？、使用示例、高级用法、项目结构。
+
+**要花钱吗？**按 MIT 许可免费使用；付费只涉及作者的企业合作与一对一咨询，不影响仓库内容。
+
+**怎么开始？**克隆仓库后按下方 README 的快速开始部分操作；无需付费账号即可阅读全部内容。
+
+<!-- andy-geo:end -->
+
 ---
 
 ## 快速开始
